@@ -11,12 +11,26 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  base: "/", // Use "/my-app/" for subdirectory deployment
+  build: {
+    outDir: "dist", // Output directory for build
+    sourcemap: false, // Disable sourcemaps for production
+    minify: "esbuild", // Use esbuild for minification (fast and efficient)
+    assetsDir: "assets", // Default assets directory
+    rollupOptions: {
+      output: {
+        // Ensure consistent chunk naming for cache busting
+        entryFileNames: `assets/[name]-[hash].js`,
+        chunkFileNames: `assets/[name]-[hash].js`,
+        assetFileNames: `assets/[name]-[hash][extname]`,
+      },
     },
   },
 }));
