@@ -7,7 +7,7 @@ function AnimatedCube() {
   return (
     <Float speed={1.5} rotationIntensity={1} floatIntensity={1}>
       <Box args={[1, 1, 1]}>
-        <meshStandardMaterial color="#06b6d4" />
+        <meshStandardMaterial color={0x06b6d4} />
       </Box>
     </Float>
   );
