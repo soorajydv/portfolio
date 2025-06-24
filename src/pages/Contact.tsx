@@ -1,21 +1,20 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Dodecahedron, Float } from "@react-three/drei";
+import { OrbitControls, Icosahedron, Float } from "@react-three/drei";
 
-function AnimatedDodecahedron() {
+function AnimatedIcosahedron() {
   return (
     <Float speed={1.6} rotationIntensity={1} floatIntensity={1.8}>
-      <Dodecahedron args={[1]}>
-        <meshStandardMaterial color="#14b8a6" />
-      </Dodecahedron>
+      <Icosahedron args={[1]}>
+        <meshStandardMaterial color="#3b82f6" />
+      </Icosahedron>
     </Float>
   );
 }
@@ -90,7 +89,7 @@ const Contact = () => {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <AnimatedDodecahedron />
+          <AnimatedIcosahedron />
           <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1} />
         </Canvas>
       </div>
