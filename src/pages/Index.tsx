@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
       {/* Enhanced CSS Background */}
       <div className="absolute inset-0 z-0">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10 dark:opacity-20"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, 180, 360],
@@ -22,7 +22,7 @@ const Index = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-25"
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-15 dark:opacity-25"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [360, 180, 0],
@@ -40,14 +40,14 @@ const Index = () => {
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full"
+            className="absolute w-1 h-1 bg-slate-400 dark:bg-slate-400 rounded-full opacity-30 dark:opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
               y: [0, -100, 0],
-              opacity: [0, 1, 0],
+              opacity: [0, 0.3, 0],
             }}
             transition={{
               duration: Math.random() * 3 + 2,
@@ -72,7 +72,7 @@ const Index = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="inline-block mb-6"
             >
-              <Sparkles className="w-16 h-16 text-yellow-400" />
+              <Sparkles className="w-16 h-16 text-yellow-500" />
             </motion.div>
           </motion.div>
 
@@ -82,7 +82,7 @@ const Index = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-8 leading-tight"
           >
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Creative
             </span>
             <br />
@@ -90,7 +90,7 @@ const Index = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-pink-600 via-red-600 to-yellow-600 bg-clip-text text-transparent"
             >
               Developer
             </motion.span>
@@ -100,7 +100,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-2xl sm:text-3xl text-white/90 mb-12 font-light"
+            className="text-2xl sm:text-3xl text-slate-700 dark:text-slate-300 mb-12 font-light"
           >
             Crafting Digital Dreams with Code & Creativity
           </motion.p>
@@ -118,10 +118,10 @@ const Index = () => {
               <Link to="/projects">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0 px-12 py-4 text-xl font-medium rounded-full shadow-2xl shadow-cyan-500/25 relative overflow-hidden group"
+                  className="bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white border-0 px-12 py-4 text-xl font-medium rounded-full shadow-2xl shadow-cyan-500/25 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Explore Work</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
               </Link>
             </motion.div>
@@ -134,7 +134,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-purple-500/50 hover:bg-purple-500/20 backdrop-blur-sm px-12 py-4 text-xl font-medium rounded-full text-white hover:text-white shadow-2xl shadow-purple-500/25"
+                  className="border-2 border-purple-500/50 hover:bg-purple-500/20 backdrop-blur-sm px-12 py-4 text-xl font-medium rounded-full text-slate-700 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 shadow-2xl shadow-purple-500/25"
                 >
                   Get In Touch
                 </Button>
@@ -153,7 +153,7 @@ const Index = () => {
               transition={{ duration: 2, repeat: Infinity }}
             >
               <Link to="/about">
-                <ArrowDown className="w-8 h-8 text-white/60 hover:text-white transition-colors cursor-pointer" />
+                <ArrowDown className="w-8 h-8 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer" />
               </Link>
             </motion.div>
           </motion.div>
@@ -161,9 +161,9 @@ const Index = () => {
       </div>
 
       {/* Glowing orbs */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-8 dark:opacity-15 animate-pulse" style={{ animationDelay: '2s' }} />
     </div>
   );
 };

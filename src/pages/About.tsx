@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -8,17 +9,17 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden">
+    <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
       {/* Animated CSS Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-30 animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-20 dark:opacity-30 animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-15 dark:opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-10 dark:opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
         <motion.div
-          className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-2xl opacity-25"
+          className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-2xl opacity-15 dark:opacity-25"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.25, 0.4, 0.25],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{
             duration: 4,
@@ -36,10 +37,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               About Me
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
               Passionate developer with a love for creating innovative solutions
             </p>
           </motion.div>
@@ -51,12 +52,12 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="prose prose-lg text-white/90">
+              <div className="prose prose-lg">
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="text-lg leading-relaxed mb-6"
+                  className="text-lg leading-relaxed mb-6 text-slate-700 dark:text-slate-300"
                 >
                   I'm a passionate full-stack developer with over 3 years of experience 
                   in creating web applications that solve real-world problems. My journey 
@@ -68,7 +69,7 @@ const About = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="text-lg leading-relaxed"
+                  className="text-lg leading-relaxed text-slate-700 dark:text-slate-300"
                 >
                   I specialize in modern JavaScript frameworks, cloud technologies, and 
                   building scalable applications. When I'm not coding, you can find me 
@@ -90,7 +91,7 @@ const About = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 + index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-lg border border-cyan-500/30 rounded-full text-sm font-medium text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 cursor-default"
+                    className="px-4 py-2 bg-gradient-to-r from-cyan-100 to-purple-100 dark:from-cyan-900/20 dark:to-purple-900/20 backdrop-blur-lg border border-cyan-200 dark:border-cyan-700 rounded-full text-sm font-medium text-cyan-800 dark:text-cyan-300 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </motion.span>
@@ -104,22 +105,22 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex justify-center"
             >
-              <Card className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 max-w-md">
+              <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200 dark:border-slate-700 shadow-2xl hover:shadow-3xl transition-all duration-500 max-w-md">
                 <CardContent className="p-8 text-center">
                   <motion.div
                     whileHover={{ scale: 1.05, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center text-4xl font-bold text-white shadow-2xl"
+                    className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-600 rounded-full flex items-center justify-center text-4xl font-bold text-white shadow-2xl"
                   >
                     YN
                   </motion.div>
-                  <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
                     Full Stack Developer
                   </h3>
-                  <p className="text-white/70 mb-4">
+                  <p className="text-slate-600 dark:text-slate-400 mb-4">
                     Building the future, one line of code at a time
                   </p>
-                  <div className="flex justify-center space-x-4 text-sm text-white/60">
+                  <div className="flex justify-center space-x-4 text-sm text-slate-500 dark:text-slate-500">
                     <span>📍 Your Location</span>
                     <span>💼 Available for work</span>
                   </div>
