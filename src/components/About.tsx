@@ -8,8 +8,8 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 section-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-20">
+      <div className="max-w-6xl mx-auto pt-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">
             About Me

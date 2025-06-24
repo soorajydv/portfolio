@@ -37,26 +37,27 @@ const Skills = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Animated CSS Background */}
+    <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
+      {/* Animated CSS Background (Copied from Projects) */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-16 right-24 w-32 h-32 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full blur-3xl opacity-25 animate-pulse" />
-        <div className="absolute bottom-24 left-20 w-28 h-28 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-24 left-16 w-36 h-36 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" />
+        <div className="absolute bottom-16 right-20 w-32 h-32 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-3xl opacity-15 dark:opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
         <motion.div
-          className="absolute top-1/3 left-1/3 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-2xl opacity-25"
+          className="absolute top-2/3 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full blur-2xl opacity-15 dark:opacity-25"
           animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, -25, 0],
+            rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
       </div>
 
-      <div className="relative z-10 section-padding">
+      <div className="relative z-10 section-padding mt-[3rem]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -82,7 +83,11 @@ const Skills = () => {
                 whileHover={{ y: -10, rotateY: 5 }}
                 className="group"
               >
-                <Card className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 h-full">
+                <Card className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 h-full"
+                style={{
+                      background: 'linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+                    }}
+                    >
                   <CardHeader>
                     <CardTitle className={`text-2xl font-semibold text-center bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
                       {category.title}

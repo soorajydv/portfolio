@@ -120,7 +120,7 @@ const Projects = () => {
         />
       </div>
 
-      <div className="relative z-10 section-padding">
+      <div className="relative z-10 section-padding mt-[3rem]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

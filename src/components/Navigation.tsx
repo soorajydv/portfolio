@@ -48,7 +48,7 @@ export function Navigation() {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              DevFolio
+              Suraj Yadav
             </Link>
           </motion.div>
 
@@ -67,11 +67,11 @@ export function Navigation() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
                       location.pathname === item.href
                         ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 shadow-lg shadow-cyan-500/25"
-                        : "text-white/80 hover:text-white hover:bg-white/10"
+                        : "text-blue-50/80 hover:text-slate-500 rounded-lg hover:bg-white/10"
                     }`}
                   >
                     <span className="relative z-10">{item.label}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
                   </Link>
                 </motion.div>
               ))}
@@ -79,7 +79,7 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <div className="md:hidden">
               <Button
                 variant="ghost"

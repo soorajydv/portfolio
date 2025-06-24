@@ -1,7 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Sparkles, Github, Linkedin, Twitter, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -18,7 +17,7 @@ const Index = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         />
         <motion.div
@@ -30,7 +29,7 @@ const Index = () => {
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         />
       </div>
@@ -83,7 +82,7 @@ const Index = () => {
             className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-8 leading-tight"
           >
             <span className="bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Creative
+              Computer
             </span>
             <br />
             <motion.span
@@ -92,7 +91,7 @@ const Index = () => {
               transition={{ delay: 0.8 }}
               className="bg-gradient-to-r from-pink-600 via-red-600 to-yellow-600 bg-clip-text text-transparent"
             >
-              Developer
+              Engineer
             </motion.span>
           </motion.h1>
 
@@ -109,15 +108,15 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/projects">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white border-0 px-12 py-4 text-xl font-medium rounded-full shadow-2xl shadow-cyan-500/25 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Explore Work</span>
@@ -125,14 +124,14 @@ const Index = () => {
                 </Button>
               </Link>
             </motion.div>
-            
+
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/contact">
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-2 border-purple-500/50 hover:bg-purple-500/20 backdrop-blur-sm px-12 py-4 text-xl font-medium rounded-full text-slate-700 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 shadow-2xl shadow-purple-500/25"
                 >
@@ -140,6 +139,54 @@ const Index = () => {
                 </Button>
               </Link>
             </motion.div>
+          </motion.div>
+
+          {/* Social Media and Resume Download */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="flex justify-center gap-6 mb-12"
+          >
+            <motion.a
+              href="https://linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              title="LinkedIn"
+            >
+              <Linkedin className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
+            </motion.a>
+            <motion.a
+              href="https://github.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              title="GitHub"
+            >
+              <Github className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
+            </motion.a>
+            <motion.a
+              href="https://x.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              title="Twitter/X"
+            >
+              <Twitter className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
+            </motion.a>
+            <motion.a
+              href="/path/to/your-resume.pdf"
+              download
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              title="Download Resume"
+            >
+              <Download className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
+            </motion.a>
           </motion.div>
 
           <motion.div
@@ -162,8 +209,8 @@ const Index = () => {
 
       {/* Glowing orbs */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-8 dark:opacity-15 animate-pulse" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-8 dark:opacity-15 animate-pulse" style={{ animationDelay: "2s" }} />
     </div>
   );
 };

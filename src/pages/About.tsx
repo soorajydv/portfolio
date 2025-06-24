@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,26 +9,26 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
-      {/* Animated CSS Background */}
+      {/* Animated CSS Background (Copied from Projects) */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-20 dark:opacity-30 animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-15 dark:opacity-25 animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl opacity-10 dark:opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-24 left-16 w-36 h-36 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" />
+        <div className="absolute bottom-16 right-20 w-32 h-32 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-3xl opacity-15 dark:opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
         <motion.div
-          className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-2xl opacity-15 dark:opacity-25"
+          className="absolute top-2/3 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full blur-2xl opacity-15 dark:opacity-25"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.15, 0.3, 0.15],
+            x: [0, 50, 0],
+            y: [0, -25, 0],
+            rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 4,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
       </div>
 
-      <div className="relative z-10 section-padding">
+      <div className="relative z-10 section-padding mt-[3rem]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -105,14 +104,18 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex justify-center"
             >
-              <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200 dark:border-slate-700 shadow-2xl hover:shadow-3xl transition-all duration-500 max-w-md">
+              <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200 dark:border-slate-700 shadow-2xl hover:shadow-3xl transition-all duration-500 max-w-md w-full">
                 <CardContent className="p-8 text-center">
                   <motion.div
                     whileHover={{ scale: 1.05, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-600 rounded-full flex items-center justify-center text-4xl font-bold text-white shadow-2xl"
+                    className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl"
                   >
-                    YN
+                    <img 
+                      src="profile.png" 
+                      alt="Profile" 
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
                   <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
                     Full Stack Developer
@@ -121,7 +124,7 @@ const About = () => {
                     Building the future, one line of code at a time
                   </p>
                   <div className="flex justify-center space-x-4 text-sm text-slate-500 dark:text-slate-500">
-                    <span>📍 Your Location</span>
+                    <span>📍 Kathmandu, Nepal</span>
                     <span>💼 Available for work</span>
                   </div>
                 </CardContent>
