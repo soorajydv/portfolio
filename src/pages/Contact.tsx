@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,18 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Icosahedron, Float } from "@react-three/drei";
-
-function AnimatedIcosahedron() {
-  return (
-    <Float speed={1.6} rotationIntensity={1} floatIntensity={1.8}>
-      <Icosahedron args={[1]}>
-        <meshStandardMaterial color="#3b82f6" />
-      </Icosahedron>
-    </Float>
-  );
-}
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -85,14 +72,23 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 z-0 opacity-25">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <AnimatedIcosahedron />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1} />
-        </Canvas>
+      {/* Animated CSS Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-10 right-10 w-28 h-28 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-25 animate-pulse" />
+        <div className="absolute bottom-32 left-16 w-36 h-36 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <motion.div
+          className="absolute top-2/3 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-2xl opacity-25"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
       <div className="relative z-10 section-padding">

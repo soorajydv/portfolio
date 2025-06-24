@@ -1,19 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Cylinder, Float } from "@react-three/drei";
-
-function AnimatedCylinder() {
-  return (
-    <Float speed={1.8} rotationIntensity={1} floatIntensity={1.2}>
-      <Cylinder args={[1, 1, 2, 32]}>
-        <meshStandardMaterial color="#ec4899" />
-      </Cylinder>
-    </Float>
-  );
-}
 
 const Experience = () => {
   const experiences = [
@@ -67,14 +54,23 @@ const Experience = () => {
 
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <AnimatedCylinder />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.6} />
-        </Canvas>
+      {/* Animated CSS Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 right-16 w-32 h-32 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute bottom-28 left-24 w-28 h-28 bg-gradient-to-r from-violet-400 to-purple-500 rounded-full blur-3xl opacity-25 animate-pulse" style={{ animationDelay: '1.8s' }} />
+        <motion.div
+          className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-r from-fuchsia-400 to-pink-500 rounded-full blur-2xl opacity-25"
+          animate={{
+            y: [0, -40, 0],
+            scale: [1, 1.3, 1],
+            rotate: [0, 270, 360],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
       <div className="relative z-10 section-padding">

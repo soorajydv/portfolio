@@ -1,21 +1,8 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Torus, Float } from "@react-three/drei";
-
-function AnimatedTorus() {
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Torus args={[1, 0.4, 16, 100]}>
-        <meshStandardMaterial color="#f59e0b" />
-      </Torus>
-    </Float>
-  );
-}
 
 const Projects = () => {
   const projects = [
@@ -59,14 +46,23 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <AnimatedTorus />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.8} />
-        </Canvas>
+      {/* Animated CSS Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-24 left-16 w-36 h-36 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute bottom-16 right-20 w-32 h-32 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-3xl opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
+        <motion.div
+          className="absolute top-2/3 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full blur-2xl opacity-25"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -25, 0],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
       <div className="relative z-10 section-padding">

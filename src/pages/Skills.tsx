@@ -1,19 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Octahedron, Float } from "@react-three/drei";
-
-function AnimatedOctahedron() {
-  return (
-    <Float speed={1.2} rotationIntensity={1} floatIntensity={1.5}>
-      <Octahedron args={[1]}>
-        <meshStandardMaterial color="#10b981" />
-      </Octahedron>
-    </Float>
-  );
-}
 
 const Skills = () => {
   const skillCategories = [
@@ -51,14 +38,22 @@ const Skills = () => {
 
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 z-0 opacity-25">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <AnimatedOctahedron />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1.2} />
-        </Canvas>
+      {/* Animated CSS Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-16 right-24 w-32 h-32 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full blur-3xl opacity-25 animate-pulse" />
+        <div className="absolute bottom-24 left-20 w-28 h-28 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+        <motion.div
+          className="absolute top-1/3 left-1/3 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-2xl opacity-25"
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
       <div className="relative z-10 section-padding">
