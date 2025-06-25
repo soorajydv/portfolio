@@ -7,30 +7,30 @@ const Skills = () => {
     {
       title: "Frontend Mastery",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Three.js/WebGL", level: 85 },
-        { name: "Advanced CSS/SASS", level: 95 }
+        { name: "React/Next.js", level: 60 },
+        { name: "TypeScript", level: 75 },
+        { name: "Redux toolkit", level: 55 },
+        { name: "HTML/CSS", level: 80 }
       ],
       color: "from-cyan-500 to-blue-600"
     },
     {
       title: "Backend Excellence",
       skills: [
-        { name: "Node.js/Express", level: 90 },
-        { name: "Python/Django", level: 85 },
-        { name: "PostgreSQL/MongoDB", level: 80 },
-        { name: "GraphQL/REST APIs", level: 88 }
+        { name: "Node.js/Express", level: 85 },
+        { name: "Python/Django", level: 65 },
+        { name: "PostgreSQL/MongoDB", level: 85 },
+        { name: "REST APIs", level: 90 }
       ],
       color: "from-purple-500 to-pink-600"
     },
     {
       title: "DevOps & Cloud",
       skills: [
-        { name: "AWS/Azure", level: 82 },
-        { name: "Docker/Kubernetes", level: 78 },
-        { name: "CI/CD Pipelines", level: 85 },
-        { name: "Microservices", level: 80 }
+        { name: "AWS/CPanel", level: 60 },
+        { name: "Docker", level: 55 },
+        { name: "CI/CD Pipelines", level: 20 },
+        { name: "Microservices", level: 45 }
       ],
       color: "from-emerald-500 to-teal-600"
     }
@@ -147,10 +147,10 @@ const Skills = () => {
             className="mt-16 text-center"
           >
             <h3 className="text-2xl font-semibold mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Additional Technologies
+              Additional Skills
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {["AI/ML", "Blockchain", "WebAssembly", "Progressive Web Apps", "Serverless", "Cybersecurity"].map((tech, index) => (
+              {["AI/ML", "Linux", "Computer N/W", "Agile methodology"].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0 }}

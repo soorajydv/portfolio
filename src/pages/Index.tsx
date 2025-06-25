@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Sparkles, Github, Linkedin, Twitter, Download } from "lucide-react";
+import { ArrowDown, Sparkles, Github, Linkedin, Twitter, Download, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -149,7 +149,7 @@ const Index = () => {
             className="flex justify-center gap-6 mb-12"
           >
             <motion.a
-              href="https://linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/sooraj-yadav-37708b1a5"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
@@ -159,7 +159,7 @@ const Index = () => {
               <Linkedin className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
             </motion.a>
             <motion.a
-              href="https://github.com/your-profile"
+              href="https://github.com/soorajydv"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
@@ -169,17 +169,17 @@ const Index = () => {
               <Github className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
             </motion.a>
             <motion.a
-              href="https://x.com/your-profile"
+              href="https://www.instagram.com/ydvsooraj/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              title="Twitter/X"
+              title="Instagram"
             >
-              <Twitter className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
+              <Instagram className="w-8 h-8 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
             </motion.a>
             <motion.a
-              href="/path/to/your-resume.pdf"
+              href="Backend.pdf"
               download
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
