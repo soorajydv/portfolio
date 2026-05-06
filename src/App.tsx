@@ -23,7 +23,6 @@ const App = () => (
       <Sonner />
       <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
         <BrowserRouter>
-          <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-x-hidden">
             <Navigation />
             <Routes>
               <Route path="/" element={<Index />} />
@@ -34,7 +33,6 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </div>
         </BrowserRouter>
       </ThemeProvider>
     </TooltipProvider>

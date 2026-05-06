@@ -5,40 +5,48 @@ import { Progress } from "@/components/ui/progress";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Mastery",
+      title: "Backend",
       skills: [
-        { name: "React/Next.js", level: 60 },
-        { name: "TypeScript", level: 75 },
-        { name: "Redux toolkit", level: 55 },
-        { name: "HTML/CSS", level: 80 }
+        { name: "Node.js/Express", level: 95 },
+        { name: "MongoDB/PostgreSQL", level: 90 },
+        { name: "Python/Django", level: 75 },
+        { name: "Redis/Kafka", level: 85 }
       ],
       color: "from-cyan-500 to-blue-600"
     },
     {
-      title: "Backend Excellence",
+      title: "Frontend",
       skills: [
-        { name: "Node.js/Express", level: 85 },
-        { name: "Python/Django", level: 65 },
-        { name: "PostgreSQL/MongoDB", level: 85 },
-        { name: "REST APIs", level: 90 }
+        { name: "React/TypeScript", level: 85 },
+        { name: "Next.js", level: 80 },
+        { name: "HTML/CSS/Tailwind", level: 90 },
+        { name: "REST APIs", level: 95 }
       ],
       color: "from-purple-500 to-pink-600"
     },
     {
       title: "DevOps & Cloud",
       skills: [
-        { name: "AWS/CPanel", level: 60 },
-        { name: "Docker", level: 55 },
-        { name: "CI/CD Pipelines", level: 20 },
-        { name: "Microservices", level: 45 }
+        { name: "Docker", level: 90 },
+        { name: "AWS/DigitalOcean", level: 75 },
+        { name: "CI/CD GitHub Actions", level: 85 },
+        { name: "cPanel", level: 80 }
+      ]
+    },
+    {
+      title: "AI & LLM",
+      skills: [
+        { name: "LLM Integration", level: 90 },
+        { name: "RAG Implementation", level: 85 },
+        { name: "Chatbot Development", level: 90 },
+        { name: "Vector Databases", level: 80 }
       ],
-      color: "from-emerald-500 to-teal-600"
+      color: "from-yellow-500 to-orange-600"
     }
   ];
 
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900">
-      {/* Animated CSS Background (Copied from Projects) */}
+    <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900 pb-8">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-24 left-16 w-36 h-36 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl opacity-10 dark:opacity-20 animate-pulse" />
         <div className="absolute bottom-16 right-20 w-32 h-32 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-3xl opacity-15 dark:opacity-25 animate-pulse" style={{ animationDelay: '1.2s' }} />
@@ -65,39 +73,36 @@ const Skills = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Skills & Expertise
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Cutting-edge technologies and frameworks I use to build the future
+              Technologies I use to build scalable, high-performance applications
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-                whileHover={{ y: -10, rotateY: 5 }}
+                whileHover={{ y: -10 }}
                 className="group"
               >
                 <Card className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 h-full"
-                style={{
-                      background: 'linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-                    }}
-                    >
+                >
                   <CardHeader>
-                    <CardTitle className={`text-2xl font-semibold text-center bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+                    <CardTitle className={`text-xl font-semibold text-center bg-gradient-to-r ${category.color || 'from-cyan-500 to-purple-500'} bg-clip-text text-transparent`}>
                       {category.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
+                  <CardContent className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div 
                         key={skill.name} 
-                        className="space-y-3"
+                        className="space-y-2"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: (categoryIndex * 0.2) + (skillIndex * 0.1) }}
@@ -106,22 +111,17 @@ const Skills = () => {
                           <span className="text-sm font-medium text-white/90">
                             {skill.name}
                           </span>
-                          <motion.span
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.3 }}
-                            className="text-sm font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
-                          >
+                          <span className="text-sm font-bold text-cyan-400">
                             {skill.level}%
-                          </motion.span>
+                          </span>
                         </div>
                         <div className="relative">
                           <Progress 
                             value={skill.level} 
-                            className="h-3 bg-white/10 rounded-full overflow-hidden"
+                            className="h-2 bg-white/10 rounded-full overflow-hidden"
                           />
                           <motion.div
-                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${category.color} rounded-full shadow-lg`}
+                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${category.color || 'from-cyan-500 to-purple-500'} rounded-full`}
                             initial={{ width: 0 }}
                             animate={{ width: `${skill.level}%` }}
                             transition={{ 
@@ -139,7 +139,6 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Floating skill badges */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -147,17 +146,17 @@ const Skills = () => {
             className="mt-16 text-center"
           >
             <h3 className="text-2xl font-semibold mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Additional Skills
+              Additional Technologies
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              {["AI/ML", "Linux", "Computer N/W", "Agile methodology"].map((tech, index) => (
+            <div className="flex flex-wrap justify-center gap-3">
+              {["Socket.io", "WebRTC", "Microservices", "Prisma", "JWT", "RBAC", "WebSockets", "API Integration", "Stripe", "eSewa", "Khalti", "PayPal"].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2 + index * 0.1 }}
+                  transition={{ delay: 1.2 + index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="px-6 py-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-lg border border-yellow-500/30 rounded-full text-sm font-medium text-yellow-300 shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 cursor-default"
+                  className="px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-sm font-medium text-white/80 hover:text-white hover:border-white/40 transition-all duration-300 cursor-default"
                 >
                   {tech}
                 </motion.span>

@@ -54,7 +54,7 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -64,14 +64,18 @@ export function Navigation() {
                 >
                   <Link
                     to={item.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
+                    className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
                       location.pathname === item.href
-                        ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 shadow-lg shadow-cyan-500/25"
-                        : "text-blue-50/80 hover:text-slate-500 rounded-lg hover:bg-white/10"
+                        ? "text-cyan-400"
+                        : "text-white/70 hover:text-white"
                     }`}
                   >
                     <span className="relative z-10">{item.label}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
+                    {location.pathname === item.href ? (
+                      <motion.div layoutId="navIndicator" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full" />
+                    ) : (
+                      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white/0 group-hover:bg-white/30 rounded-full transition-colors duration-300" />
+                    )}
                   </Link>
                 </motion.div>
               ))}
@@ -107,10 +111,10 @@ export function Navigation() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
+                className={`block px-3 py-2 text-base font-medium transition-all duration-300 ${
                   location.pathname === item.href
-                    ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-cyan-400"
+                    : "text-white/80 hover:text-white"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
